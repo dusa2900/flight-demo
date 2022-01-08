@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { TravelService } from 'src/app/services/travel.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -11,11 +13,14 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   searchForm : FormGroup | any;
   departureDate : any ;
-
   returnDate : any ;
   maxDate : any ;
-  constructor(datepipe:DatePipe,private formBuilder:FormBuilder,private travel:TravelService,private route:Router) { 
+  myParams :any;
+
+  constructor(datepipe:DatePipe,private formBuilder:FormBuilder,private travel:TravelService,private route:Router,private activate:ActivatedRoute) { 
     const dateFormat = "yyyy-mm-dd";
+
+    
     console.log(datepipe.transform(new Date().setDate(new Date().getDate())));
       this.departureDate = datepipe.transform(
       new Date().setDate(new Date().getDate()-1),
@@ -25,6 +30,22 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activate.params.subscribe((params:any) => this.myParams =  params.caller);
+    if(this.myParams){
+      this.travel.getTravels().subscribe( (res:any)=>{
+        res.map( (item:any)=>{
+          console.log("s",item,item.key === this.myParams);
+          
+          if(item.key === this.myParams)
+        {
+          this.searchForm.value.from = item.from
+          this.searchForm.value.to = item.to
+        }
+        })
+        
+        
+      })
+    }
     this.searchForm=this.formBuilder.group({
       from:['',Validators.required],
       to:['',Validators.required],

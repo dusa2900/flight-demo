@@ -8,7 +8,7 @@ import { TravelService } from 'src/app/services/travel.service';
   styleUrls: ['./travel.component.css']
 })
 export class TravelComponent implements OnInit {
-  travels = [];
+ public travels : any;
   myParams : string =''
   constructor(private activtedRoute:ActivatedRoute,private travel:TravelService) { }
 
@@ -19,9 +19,8 @@ export class TravelComponent implements OnInit {
         console.log(item);
         if(item.key === this.myParams)
         {
-           item.buses.map((x:any)=>this.travels=x);
+          this.travels = item.buses;
           console.log(this.travels);
-          
         }
       })
         },err=>console.log(err)

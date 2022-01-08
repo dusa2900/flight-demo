@@ -1,36 +1,36 @@
-<div class="container">
+<div class="container-fluid ">
 <div class="card p-3">
 <form action="" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <div class="row">
         <div class="col">
-        <label for=""> <b>From</b></label>
+        <label for=""> <b>From</b></label> &nbsp;
         <input type="text" formControlName="from">
         <span *ngIf="searchForm.get('from').hasError('required') && searchForm.get('from').touched">
             <p class="text-danger">Enter valid Details</p>
         </span>
         </div>
         <div class="col">
-            <label for=""><b>To</b> </label>
+            <label for=""><b>To</b> </label> &nbsp;
             <input type="text" formControlName="to">
             <span *ngIf="searchForm.get('to').hasError('required') && searchForm.get('to').touched">
                 <p class="text-danger">Enter valid Details</p>
             </span>
         </div>
-        <div class="col">
-            <label for=""><b>Departure</b> </label>
+        <div class="col" >
+            <label for=""><b>Departure</b> </label> &nbsp;
             <input type="date" formControlName="departure" [max]="maxDate > returnDate ? returnDate : maxDate" (change)="onDateChange()">
             <span *ngIf="searchForm.get('departure').hasError('required') && searchForm.get('departure').touched">
                 <p class="text-danger">Enter valid Details</p>
             </span>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="!myParams">
             <label for=""><b>Return</b> </label>
             <input type="date" formControlName="return" [min]="departureDate" [max]="maxDate" (change)="onDateChange()" >
             <span *ngIf="searchForm.get('return').hasError('required') && searchForm.get('return').touched">
                 <p class="text-danger">Enter valid Details</p>
             </span>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="!myParams">
             <button class="btn btn-success mt-3" [disabled]="!searchForm.valid" type="submit">Search</button>
         </div>
     </div>
