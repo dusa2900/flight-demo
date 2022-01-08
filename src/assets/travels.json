@@ -1,0 +1,32 @@
+{
+    "travels":[
+        {
+            "from":"karimnagar",
+            "to":"hyderabad",
+            "key":"kmr_hyd",
+            "buses":[
+                {
+                    "bus":"Volvo",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                },
+                {
+                    "bus":"Super Luxury",
+                    "type":"Normal",
+                    "cost":250
+                },
+                {
+                    "bus":"Vajra Bus",
+                    "type":"AC sleeper Class/Double Decker",
+                    "cost":500
+                },
+                {
+                    "bus":"Rajadani Express",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                }
+            ]
+        }
+
+    ]
+}
