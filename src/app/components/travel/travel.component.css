@@ -5,10 +5,11 @@
 }
 .container-fluid
 {
-    margin-top: 57px;
+
     width: 90%;
     margin: 57px auto;
-
+    position: relative;
+    
 }
 .card
 {
@@ -16,4 +17,14 @@
     padding: 15px;
     box-shadow: 2px 2px 2px grey;
     text-align: center;
+}
+.view
+{
+    width: 25%;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    right: 25%;
+   
+    background-color: rgb(204, 228, 228);
 }

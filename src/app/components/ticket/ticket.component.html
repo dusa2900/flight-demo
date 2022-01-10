@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="card view " >
+    <div class="card-header p-1">
+        <h5>BUS TICKET</h5>
+    </div>
+    <div class="card-body">
+        <label for="">From : </label><b>{{ busftr.from }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="">To : </label> <b>{{busftr.to}}</b>
+        <br>
+        <br>
+        <table class="table table-center w-75 m-auto">
+            <tr>
+                <th>BUS</th>
+                <th>:</th>
+                <th>{{busObject.bus}}</th>
+            </tr>
+            <tr>
+                <th>TYPE</th>
+                <th>:</th>
+                <th>{{busObject.type}}</th>
+            </tr>
+            <tr>
+                <th>COST</th>
+                <th>:</th>
+                <th>{{busObject.cost | currency:'INR'}}</th>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-secondary p-2 m-1">Cancel</button> &nbsp;
+        <button class="btn btn-success p-2 m-1" >Print</button>
+    </div>
+</div>

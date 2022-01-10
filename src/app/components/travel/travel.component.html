@@ -1,24 +1,57 @@
-
 <div class="container-fluid ">
     <br>
     <div class="div">
-        <app-search ></app-search>
+        <app-search></app-search>
     </div>
-        <div class="card"  *ngFor="let x of travels" >
-            <div class="row" >
-                <div class="col">
-                    <h4>{{x.bus}}</h4>
-                    <h6>{{x.type}}</h6>
-                </div>
-                <div class="col">
-                    <strong>Cost:</strong>
-                    <h6 style="color: red;">{{x.cost | currency:'INR'}}</h6>
-                </div>
-                <div class="col">
-                    <button class="btn btn-success p-1">Book Ticket</button><br> 
-                    <button class="btn btn-danger p-1 m-1">Term & conditions</button>
-                </div>
+    <div class="card" *ngFor="let x of travels">
+        <div class="row">
+            <div class="col">
+                <h4>{{x.bus}}</h4>
+                <h6>{{x.type}}</h6>
+            </div>
+            <div class="col">
+                <strong>Cost:</strong>
+                <h6 style="color: red;">{{x.cost | currency:'INR'}}</h6>
+            </div>
+            <div class="col">
+                <button class="btn btn-success p-1" (click)="bookTicket(x.id)">Book Ticket</button><br>
+                <button class="btn btn-danger p-1 m-1">Term & conditions</button>
             </div>
         </div>
-    
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="card view w-25" *ngIf="isHandledModel">
+    <div class="card-header p-1">
+        <h5>BUS TICKET</h5>
+    </div>
+    <div class="card-body">
+        <label for="">From : </label><b>{{ busftr.from }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="">To : </label> <b>{{busftr.to}}</b>
+        <br>
+        <br>
+        <table class="table table-center w-75 m-auto">
+            <tr>
+                <th>BUS</th>
+                <th>:</th>
+                <th>{{busObject.bus}}</th>
+            </tr>
+            <tr>
+                <th>TYPE</th>
+                <th>:</th>
+                <th>{{busObject.type}}</th>
+            </tr>
+            <tr>
+                <th>COST</th>
+                <th>:</th>
+                <th>{{busObject.cost | currency:'INR'}}</th>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-secondary p-2 m-1" (click)="close()">Cancel</button> &nbsp;
+        <button class="btn btn-success p-2 m-1" (click)="print()">Print</button>
+    </div>
 </div>

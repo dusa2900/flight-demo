@@ -1,9 +1,63 @@
 {
     "travels":[
-        {
+        {   "id":1,
             "from":"karimnagar",
             "to":"hyderabad",
             "key":"kmr_hyd",
+            "buses":[
+                {   "id":1,
+                    "bus":"Volvo",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                },
+                {   "id":2,
+                    "bus":"Super Luxury",
+                    "type":"Normal",
+                    "cost":250
+                },
+                {   "id":3,
+                    "bus":"Vajra Bus",
+                    "type":"AC sleeper Class/Double Decker",
+                    "cost":500
+                },
+                {   "id":4,
+                    "bus":"Rajadani Express",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                }
+            ]
+        },
+        {   "id":2,
+            "from":"karimnagar",
+            "to":"warangal",
+            "key":"kmr_wgl",
+            "buses":[
+                {
+                    "bus":"Volvo",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                },
+                {
+                    "bus":"Super Luxury",
+                    "type":"Normal",
+                    "cost":250
+                },
+                {
+                    "bus":"Vajra Bus",
+                    "type":"AC sleeper Class/Double Decker",
+                    "cost":500
+                },
+                {
+                    "bus":"Rajadani Express",
+                    "type":"AC sleeper Class",
+                    "cost":350
+                }
+            ]
+        },
+        {   "id":3,
+            "from":"karimnagar",
+            "to":"nizamabad",
+            "key":"kmr_nzd",
             "buses":[
                 {
                     "bus":"Volvo",

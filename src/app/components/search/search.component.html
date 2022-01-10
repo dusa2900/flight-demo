@@ -16,9 +16,16 @@
                 <p class="text-danger">Enter valid Details</p>
             </span>
         </div>
-        <div class="col" >
+        <div class="col" *ngIf="!myParams">
             <label for=""><b>Departure</b> </label> &nbsp;
-            <input type="date" formControlName="departure" [max]="maxDate > returnDate ? returnDate : maxDate" (change)="onDateChange()">
+            <input type="date" value="departure" formControlName="departure" [max]="maxDate > returnDate ? returnDate : maxDate" (change)="onDateChange()">
+            <span *ngIf="searchForm.get('departure').hasError('required') && searchForm.get('departure').touched">
+                <p class="text-danger">Enter valid Details</p>
+            </span>
+        </div>
+        <div class="col" *ngIf="myParams">
+            <label for=""><b>Departure</b> </label> &nbsp;
+            <input type="text" value="departure" formControlName="departure" [max]="maxDate > returnDate ? returnDate : maxDate" (change)="onDateChange()">
             <span *ngIf="searchForm.get('departure').hasError('required') && searchForm.get('departure').touched">
                 <p class="text-danger">Enter valid Details</p>
             </span>

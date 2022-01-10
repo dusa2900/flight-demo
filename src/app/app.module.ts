@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { TravelComponent } from './components/travel/travel.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TravelComponent } from './components/travel/travel.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TravelComponent
+    TravelComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
