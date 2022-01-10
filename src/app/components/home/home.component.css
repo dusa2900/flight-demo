@@ -9,7 +9,7 @@
     width: 100%;
     position: relative;
     background-size: cover;
-    background-position: center;
+    background-position:center center;
     height: 80vh;
     background-repeat: no-repeat;
 }
@@ -18,6 +18,18 @@
 {
     position: absolute;
     top: 35%;
+    left: 5%;
+    right: 5%;
+}
+.img
+{
+    background-image: url('../../../assets/Capture.PNG');
+    background-repeat: no-repeat; 
+    background-size: contain;
+    height: 15vh;
+    background-position:center center ;
+    position: absolute;
+    bottom: 5%;
     left: 5%;
     right: 5%;
 }

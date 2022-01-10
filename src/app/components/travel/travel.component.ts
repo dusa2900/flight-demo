@@ -13,6 +13,7 @@ export class TravelComponent implements OnInit {
   busObject :any;
   busftr :any;
   isHandledModel : boolean = false;
+  isHandledTerm : boolean = false;
   constructor(private activtedRoute:ActivatedRoute,private travel:TravelService) { }
 
   ngOnInit(): void {
@@ -65,5 +66,9 @@ export class TravelComponent implements OnInit {
   close()
   {
     this.isHandledModel = !this.isHandledModel;
+  }
+  term()
+  {
+    this.isHandledTerm = !this.isHandledTerm? true : false;
   }
 }

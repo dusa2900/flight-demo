@@ -15,7 +15,7 @@
             </div>
             <div class="col">
                 <button class="btn btn-success p-1" (click)="bookTicket(x.id)">Book Ticket</button><br>
-                <button class="btn btn-danger p-1 m-1">Term & conditions</button>
+                <button class="btn btn-danger p-1 m-1" (click)="term()" >Term & conditions</button>
             </div>
         </div>
     </div>
@@ -53,5 +53,17 @@
     <div class="card-footer">
         <button class="btn btn-secondary p-2 m-1" (click)="close()">Cancel</button> &nbsp;
         <button class="btn btn-success p-2 m-1" (click)="print()">Print</button>
+    </div>
+</div>
+
+<div class="card view w-25" *ngIf="isHandledTerm">
+    <div class="card-header">
+        <h6>Terms & Conditins</h6>
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>User needs to compulsorily obtain a bus ticket at the regular fare </li>
+            <li>Customer will be entitled to a 100% refund of ticket fare if the cancellation of ticket</li>
+        </ul>
     </div>
 </div>

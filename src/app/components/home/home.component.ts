@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,10 @@ export class HomeComponent implements OnInit {
  ];
   actualImage: string='';
   changeBackgroundCounter = 0;
-  constructor() { }
+  constructor(private actRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+ 
     this.actualImage = this.images[0];
     setInterval(() => {
       this.changeBackgroundCounter++;

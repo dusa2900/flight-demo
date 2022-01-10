@@ -13,7 +13,8 @@ const routes: Routes = [
   },
   // {
   //   path:'ticket/:caller/:id',component:TicketComponent
-  // }
+  // },
+  { path:'', redirectTo:'', pathMatch:"prefix" }
 ];
 
 @NgModule({
