@@ -9,10 +9,13 @@ export class TravelService {
 
   public apiUrl: string = "http://localhost:3000/travels";
 
+  //express JS server link
+  public apiUrl1: string = "http://localhost:2900/getData" 
+
   constructor(private http: HttpClient) { }
 
   getTravels(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrl1);
   }
 
   postTravels(key: any, data: any): Observable<any> {

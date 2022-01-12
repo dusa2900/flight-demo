@@ -8,6 +8,7 @@ import { TravelService } from 'src/app/services/travel.service';
   styleUrls: ['./travel.component.css']
 })
 export class TravelComponent implements OnInit {
+  p: number = 1;
  public travels : any;
   myParams : string =''
   busObject :any;

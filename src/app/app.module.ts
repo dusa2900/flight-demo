@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { TravelComponent } from './components/travel/travel.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,HttpClientModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule,NgxPaginationModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
   myParams: any;
 
   constructor(datepipe: DatePipe, private formBuilder: FormBuilder, private travel: TravelService, private route: Router, private activate: ActivatedRoute) {
+    this.travel.getTravels().subscribe(x=> console.log("s",x))
     const dateFormat = "yyyy-mm-dd";
     console.log(datepipe.transform(new Date().setDate(new Date().getDate())));
     this.departureDate = datepipe.transform(

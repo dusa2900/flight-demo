@@ -3,7 +3,7 @@
     <div class="div">
         <app-search></app-search>
     </div>
-    <div class="card" *ngFor="let x of travels">
+    <div class="card" *ngFor="let x of travels | paginate: { itemsPerPage: 5, currentPage: p }">
         <div class="row">
             <div class="col">
                 <h4>{{x.bus}}</h4>
@@ -19,6 +19,9 @@
             </div>
         </div>
     </div>
+    <span class="float-right">
+        <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+    </span>
 </div>
 
 
